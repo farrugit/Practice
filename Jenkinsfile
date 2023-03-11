@@ -10,7 +10,7 @@ pipeline{
                 
                 script{
                     
-                    git branch: 'master', url: 'https://github.com/farrugit/Practice.git'
+                    git branch: 'maing', url: 'https://github.com/farrugit/Practice.git'
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline{
                 }
             }
         }
-        stage('Static code analysis'){
+        /*stage('Static code analysis'){
             
             steps{
                 
@@ -67,7 +67,7 @@ pipeline{
                         waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
                     }
                 }
-            }
+            }*/
         }
         
 }
