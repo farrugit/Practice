@@ -20,7 +20,7 @@ pipeline{
                 
                 script{
                     
-                    sh 'mvn test'
+                    sh "mvn test"
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline{
                 
                 script{
                     
-                    sh 'mvn verify -DskipUnitTests'
+                    sh "mvn verify -DskipUnitTests"
                 }
             }
         }
@@ -40,7 +40,7 @@ pipeline{
                 
                 script{
                     
-                    sh 'mvn clean install'
+                    sh "mvn clean install"
                 }
             }
         }
@@ -68,6 +68,5 @@ pipeline{
                     }
                 }
             }*/
-        }
-        
-}g
+        }      
+}
