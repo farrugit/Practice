@@ -1,11 +1,10 @@
 pipeline{
     
     agent any 
-    /*tools{
-        maven 'Maven 3.8.6'
-        jdk 'Java 17.0.4.1'
-    }*/
-    
+    tools{
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
     stages {
         
         stage('Git Checkout'){
@@ -24,7 +23,7 @@ pipeline{
                 
                 script{
                     
-                    sh "mvn test"
+                    sh 'mvn test'
                 }
             }
         }
@@ -34,7 +33,7 @@ pipeline{
                 
                 script{
                     
-                    sh "mvn verify -DskipUnitTests"
+                    sh 'mvn verify -DskipUnitTests'
                 }
             }
         }
@@ -44,7 +43,7 @@ pipeline{
                 
                 script{
                     
-                    sh "mvn clean install"
+                    sh 'mvn clean install'
                 }
             }
         }
