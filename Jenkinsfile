@@ -10,7 +10,7 @@ pipeline{
                 
                 script{
                     
-                    git branch: 'maing', url: 'https://github.com/farrugit/Practice.git'
+                    git branch: 'main', url: 'https://github.com/farrugit/Practice.git'
                 }
             }
         }
@@ -70,4 +70,4 @@ pipeline{
             }*/
         }
         
-}
+}g
