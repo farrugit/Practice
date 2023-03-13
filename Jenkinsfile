@@ -47,13 +47,13 @@ pipeline{
                 }
             }
         }
-        /*stage('Static code analysis'){
+        stage('Static code analysis'){
             
             steps{
                 
                 script{
                     
-                    withSonarQubeEnv(credentialsId: 'sonar-api') {
+                    withSonarQubeEnv(credentialsId: 'sonar') {
                         
                         sh 'mvn clean package sonar:sonar'
                     }
@@ -61,7 +61,7 @@ pipeline{
                     
                 }
             }
-            stage('Quality Gate Status'){
+          /*  stage('Quality Gate Status'){
                 
                 steps{
                     
