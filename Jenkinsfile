@@ -47,18 +47,7 @@ pipeline{
                 }
             }
         }
-       /* stage('maven package'){
-            
-            steps{
-                
-                script{
-                    
-                        sh 'mvn clean package'
-                    
-                }
-                    
-                }
-            }*/
+                      
         stage('Static code analysis'){
             
             steps{
@@ -73,15 +62,15 @@ pipeline{
                     
                 }
             }
-          /*  stage('Quality Gate Status'){
+          stage('Quality Gate Status'){
                 
                 steps{
                     
                     script{
 
-                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
                     }
                 }
-            }*/
+            }
         }      
 }
