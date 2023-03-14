@@ -47,7 +47,7 @@ pipeline{
                 }
             }
         }
-        stage('maven package'){
+       /* stage('maven package'){
             
             steps{
                 
@@ -55,11 +55,11 @@ pipeline{
                     
                         sh 'mvn clean package'
                     
-                 }
+                }
                     
                 }
-            }
-        /*stage('Static code analysis'){
+            }*/
+        stage('Static code analysis'){
             
             steps{
                 
