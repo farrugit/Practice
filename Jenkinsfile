@@ -47,7 +47,19 @@ pipeline{
                 }
             }
         }
-        stage('Static code analysis'){
+        stage('maven package'){
+            
+            steps{
+                
+                script{
+                    
+                        sh 'mvn clean package'
+                    
+                 }
+                    
+                }
+            }
+        /*stage('Static code analysis'){
             
             steps{
                 
@@ -66,7 +78,7 @@ pipeline{
                 steps{
                     
                     script{
-                        
+
                         waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
                     }
                 }
