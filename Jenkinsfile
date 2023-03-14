@@ -86,7 +86,7 @@ pipeline{
                         nexusUrl: 'nexus:8081', 
                         nexusVersion: 'nexus3',
                         protocol: 'http', 
-                        repository: 'jenkins_maven', 
+                        repository: 'nexusRepo', 
                         version: "${readPomVersion.version}"
                 }
             }
