@@ -111,11 +111,12 @@ pipeline{
                 }
             }
         }
-        stage('container deployment')
+        stage('container deployment'){
         steps{
             script{
                 sh 'docker run test -p 3000:3000 $JOB_NAME:v1.$BUILD_ID'
             }
+        }
         }
      }      
 }
