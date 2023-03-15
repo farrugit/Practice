@@ -91,5 +91,25 @@ pipeline{
                 }
             }
         }
+        stage('docker image build'){
+            steps{
+                script{
+                    sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
+                    sh 'docker image tag $JOB_NAME:v1.$BUILD_ID sk0808/$JOB_NAME:v1.$BUILD_ID'
+            
+                }
+            }
+        }
+        stage('Image push to DockerHub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'dockerhub_pwd', variable: 'dockerhub_cred')])
+                    {
+                    sh 'docker image login -u sk0808 -p ${dockerhub_cred}'   
+                    sh 'docker image push sk0808/$JOB_NAME:v1.$BUILD_ID'
+                    }
+                }
+            }
+        }
      }      
 }
