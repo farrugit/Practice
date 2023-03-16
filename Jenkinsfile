@@ -114,8 +114,8 @@ pipeline{
         stage('container deployment'){
         steps{
             script{
-                sh 'docker login -u sk0808 -p ${docker_cred}'
-                sh 'docker run --name demo -p 9090:9090 $JOB_NAME:v1.$BUILD_ID'
+               /* sh 'docker login -u sk0808 -p ${docker_cred}'*/
+                sh 'docker run --name demo -p 9090:9090 sk0808/$JOB_NAME:v1.$BUILD_ID'
             }
         }
         }
